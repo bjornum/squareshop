@@ -14,6 +14,7 @@ defmodule SquareshopWeb.AdminUserController do
 		user = Identity.get_user!(id)
 	    render conn, "currentuser.html", users: users, user: user
 	end
+	
 	def create(conn, %{"user" => user_params}) do
 		changeset = Identity.create_user(user_params)
 		render conn, "currentuser.html", changeset: changeset
