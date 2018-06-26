@@ -15,6 +15,7 @@
 			<td> <%= prod.name %> </td>
 			<td> <%= prod.pnr %> </td>
 			<td> <%= prod.base_price %> </td>
+			<td><%= link "Edit", to: admin_products_path(@conn, :edit, prod) %></td>
 
 			</tr>
 			<% end %>

@@ -50,6 +50,4 @@ defmodule SquareshopWeb.UserController do
         render(conn, "edit.html", user: user, changeset: changeset)
     end
   end
-
-
 end

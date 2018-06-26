@@ -16,13 +16,12 @@ defmodule Squareshop.Products do
 		|> Product.changeset(productdata)
 		|> Repo.insert()
 	end
-
-
+	# Helper function to strip off the Struct from forms
 	def change_product(%Product{} = products) do
 		Product.changeset(products, %{})
 	end
 
-	# Listing up all the products
+	# Listing all the products
 	def list_products() do
 		Repo.all(Product)
 	end
@@ -30,4 +29,14 @@ defmodule Squareshop.Products do
 	def get_product!(id) do
 		 Repo.get!(Product, id)
 	end
+
+	def update_product(id, params) do
+		product = Products.get_product!(id)
+
+		product
+		|> Product.changeset(params)
+		|> Repo.change()
+	end
+
+
 end
