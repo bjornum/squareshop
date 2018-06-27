@@ -27,10 +27,17 @@
   			<div class="sq-navbar-domain  sq-secondary" style="width:100%;display:flex;">
   				<a href="/" class="sq-text-white sq-secondary">Home</a>
   				<div class="sq-flex-1"></div>
+
   				<!-- Searchbar -->
   				<div class="sq-flex-auto sq-form">
-  					<input type="text" placeholder="Search..." name="search" class="sq-nav-margin">
+  					<%# <input type="text" placeholder="Search..." name="search" class="sq-nav-margin"> %>
+            <%= form_for @conn, products_path(@conn, :index), [method: :get, class: "pull-right"], fn f -> %>
+              <%= search_input f, :query %>
+              <%= submit "Search" %>
+            <% end %>
   				</div>
+          <!-- Searchbar end-->
+
   				<!--ShoppingCart & SignIn buttons -->
   				<div class="sq-flex-1 sq-text-right">
   					<div class="sq-air-x-05 sq-nav-btn-group2 sq-flex-1">
