@@ -10,7 +10,7 @@ alias Squareshop.Products.Product
   end
   def show(conn, %{"id" => id}) do
 		product = Products.get_product!(id)
-	    render conn, "product.html", product: product
+	  render conn, "product.html", product: product
 	end
 
 end
