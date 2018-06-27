@@ -16,6 +16,14 @@ defmodule Squareshop.Products.Product do
     timestamps()
   end
 
+  def list_products(params) do
+    search_term = get_in(params, ["query"])
+
+    Product
+    |> Product.search(search_term)
+    |> Repo.all()
+  end
+
   def changeset(products, attrs) do
     products
     |> cast(attrs, [:name, :image, :pnr, :summary, :base_price, :stock, :supplier, :alternative_products])
