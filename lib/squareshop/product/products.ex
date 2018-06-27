@@ -1,6 +1,11 @@
 defmodule Squareshop.Products.Product do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
+
+ 	alias Squareshop.Repo
+	alias Squareshop.Products
+	alias Squareshop.Products.Product
 
 
   schema "products" do
