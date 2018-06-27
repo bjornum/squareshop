@@ -5,9 +5,10 @@ alias Squareshop.Products.Product
 
 
   def index(conn, params) do
-    products = Products.list_products(params)
-    render conn, "index.html", products: products
+    product = Products.list_product(params)
+    render conn, "index.html", product: products
   end
+  
   def show(conn, %{"id" => id}) do
 		product = Products.get_product!(id)
 	  render conn, "product.html", product: product
