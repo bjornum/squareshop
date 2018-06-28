@@ -7,6 +7,8 @@ alias Squareshop.Products.Product
   def index(conn, params) do
     product = Products.list_products(params)
     render conn, "index.html", product: product
+    products = Products.list_products(params)
+    render conn, "index.html", products: products
   end
   
   def show(conn, %{"id" => id}) do
