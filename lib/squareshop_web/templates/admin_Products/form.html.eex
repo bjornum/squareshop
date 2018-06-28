@@ -8,29 +8,29 @@
 		<div class="Sq-container sq-flex-row sq-justify-center">
 			<fieldset>
 				<label>Alternative products</label>
-				<%= text_input f, :alternative_products %>
+				<%= text_input f, :alternative_products, class: "sq-width-95p" %>
 				<br>
 				<label>Cost</label>
-				<%= text_input f, :base_price %>
+				<%= text_input f, :base_price, class: "sq-width-95p" %>
 				<br>
 				<label>Image</label>
-				<%= text_input f, :image %>
+
 <br>
 				<label>In Stock</label>
-				<%= text_input f, :stock %>
+				<%= text_input f, :stock, class: "sq-width-95p" %>
 <br>
 				<label>Name</label>
-				<%= text_input f, :name %>
+				<%= text_input f, :name, class: "sq-width-95p" %>
 <br>
 				<label>Product number</label>
-				<%= text_input f, :pnr %>
+				<%= text_input f, :pnr, class: "sq-width-95p" %>
 <br>
 				<label>Summary</label>
-				<%= text_input f, :summary %>
+				<%= text_input f, :summary, class: "sq-width-95p" %>
 <br>
 				<label>Supplier</label>
-				<%= text_input f, :supplier %>
-				<button onclick="window.location.href='/adminproducts'" type="submit" class="sq-btn"></button>
+				<%= text_input f, :supplier, class: "sq-width-95p" %>
+				<button onclick="window.location.href='/adminproducts'" type="submit" class="sq-btn1"></button>
 			</fieldset>
 		</div>
 	</form>

@@ -8,6 +8,11 @@
 					<th>Etternavn</th>
 					<th>Telefon</th>
 					<th>E-post</th>
+					<th>Address</th>
+					<th>Zip Code</th>
+					<th>City</th>
+					<th>Country</th>
+
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +23,10 @@
 					<td> <%= user.lname %></td>
 					<td> <%= user.phone %></td>
 					<td> <%= user.email %></td>
+					<td> <%= user.address %>  </td>
+					<td> <%= user.zip_code %></td>
+					<td> <%= user.city %></td>
+					<td> <%= user.country %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -26,26 +35,31 @@
 	</div>
 	<div class="sq-panel sq-admin-bruker-datapanel sq-black">
 		<h1><%= @user.fname %> <%= @user.lname %></h1><br>
-		<table class="sq-tables">
-			<thead>
-				<tr>
-					<th>Road</th>
-					<th>Zip code</th>
-					<th>City</th>
-					<th>Country</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%= for address <- @user.addresses do %>
-					<tr>
-						<td> <%= address.address %>  </td>
-						<td> <%= address.zip_code %></td>
-						<td> <%= address.city %></td>
-						<td> <%= address.country %></td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<ul>
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+    </li>
+    <li>
+    <strong>Phone:</strong>
+    <%= @user.phone %>
+  </li>
+  <li>
+    <strong>Address:</strong>
+    <%= @user.address %>
+  </li>
+  <li>
+    <strong>Zip code:</strong>
+    <%= @user.zip_code %>
+  </li>
+  <li>
+    <strong>City:</strong>
+    <%= @user.city %>
+  </li>
+  <li>
+    <strong>Country:</strong>
+    <%= @user.country %> 
+  </li> 
 	</div>
 	<div class="sq-panel sq-admin-bruker-logpanel sq-black" style="overflow-y: auto;">
 		<table class="sq-tables">

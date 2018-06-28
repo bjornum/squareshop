@@ -41,7 +41,7 @@
     <strong>Country:</strong>
     <%= @user.country %> 
   </li> 
-  <%% end %>
+  
 
 </ul>
 		

@@ -9,6 +9,7 @@ defmodule Squareshop.Products do
 	alias Squareshop.Repo
 	alias Squareshop.Products
 	alias Squareshop.Products.Product
+	require Logger
 
 
 	#search function
@@ -30,12 +31,7 @@ defmodule Squareshop.Products do
 		|> Repo.insert()
 	end
 
-
-	def change_product(%Product{} = products) do
-		Product.changeset(products, %{})
-	end
-
-	# Listing up all the products
+	# Listing all the products
 	def list_products() do
 		Repo.all(Product)
 	end
@@ -51,4 +47,19 @@ defmodule Squareshop.Products do
 	def get_product!(id) do
 		 Repo.get!(Product, id)
 	end
+
+	# Helper function
+	def change_product(%Product{} = products) do
+		Product.changeset(products, %{})
+	end
+
+	def update_product(%Product{} = product, attrs) do
+
+		Logger.debug("i ran")
+		product
+		|> Product.changeset(attrs)
+		|> Repo.update()
+	end
+
+
 end

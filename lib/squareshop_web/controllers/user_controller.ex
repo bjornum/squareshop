@@ -21,22 +21,10 @@ defmodule SquareshopWeb.UserController do
         conn
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: user_path(conn, :show, user))
- 
-    end
-  # def create2(conn, %{"user" => user_params}) do
-  #   case Identity.create_user(user_params) do
-  #     {:ok, user} ->
-  #       conn
-  #       |> put_flash(:info, "User created successfully.")
-  #       |> redirect(to: user_path(conn, :show, user))
-  #   end
-  # end  
+	  {:error, %Ecto.Changeset{} = changeset} ->
+			render(conn, "new.html", changeset: changeset)
+	end
   end
-
-  # def show(conn, %{"id" => id}) do
-  #   user = Identity.get_user!(id)
-  #   render(conn, "show.html", user: user)
-  # end
 
   def show(conn, %{"id" => id}) do
 		users = Identity.list_users()
@@ -62,6 +50,4 @@ defmodule SquareshopWeb.UserController do
         render(conn, "edit.html", user: user, changeset: changeset)
     end
   end
-
-
 end
