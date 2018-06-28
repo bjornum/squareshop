@@ -40,6 +40,14 @@ defmodule Squareshop.Products do
 		Repo.all(Product)
 	end
 
+	def list_products(params) do
+		search_term = get_in(params, ["query"])
+	
+		Product
+		|> Products.search(search_term)
+		|> Repo.all()
+	end
+
 	def get_product!(id) do
 		 Repo.get!(Product, id)
 	end

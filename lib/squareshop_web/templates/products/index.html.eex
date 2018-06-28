@@ -8,7 +8,7 @@
   <div class="sq-products-table-layout-area-panel"style="padding:0">
     <div class="sq-air-y-1 sq-panel sq-flex-wrap sq-justify-space-around">
     <!-- Product card 1 -->
-    <%= for product <- @products do %>
+    <%= for product <- @product do %>
       <div class="sq-product-card sq-card">
         <div class="sq-card-header sq-text-center">
           <p> <%= product.name %> </p>
