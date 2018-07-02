@@ -12,6 +12,7 @@ defmodule Compare.Repo.Migrations.CreateUsers do
       		add :country, :string
      		add :city, :string
       		add :zip_code, :integer
+			add :shopping_cart, {:array, :integer}
 			timestamps()
 		end
 	end
