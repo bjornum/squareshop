@@ -26,6 +26,10 @@ defmodule SquareshopWeb.Router do
 		resources "/adminuser", AdminUserController
     resources "/user", UserController
     get "/form", FormController, :index
+
+    get "/sign-in", LoginController, :new
+    post "/sign-in", LoginController, :create
+    delete "/sign-out", LoginController, :delete
 	end
 
 

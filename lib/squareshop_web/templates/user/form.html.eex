@@ -46,9 +46,9 @@
                                 <label>E-mail</label>
                                 <%= text_input f, :email, class: "sq-width-95p" %>
                                 <label>Password</label>
-                                <%= password_input f, :password, class: "sq-width-95p" %>
+                                <%= password_input f, :encrypted_password, class: "sq-width-95p" %>
                                 <label>Retype Password</label>
-                                <%= password_input f, :password, class: "sq-width-95p" %>
+                                <%= password_input f, :encrypted_password, class: "sq-width-95p" %>
                                 <button onclick="window.location.href='/user'" type="submit" class="sq-btn1">Register</button>
                             </fieldset>
                         </div>

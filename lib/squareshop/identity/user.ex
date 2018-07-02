@@ -9,21 +9,22 @@ defmodule Squareshop.Identity.User do
 		field :lname, :string
 		field :phone, :string
 		field :email, :string
-		field :password, :string
+		field :encrypted_password, :string
 		field :address, :string
 		field :city, :string
     	field :country, :string
     	field :zip_code, :integer
+		embeds_many :shopping_cart, Squareshop.Sales.Cart
 		timestamps()
 	end
 	def changeset(user, attrs) do
 		# Logger.debug("user #{inspect(user)}")
 		Logger.debug("number 1 ran")
 		user
-		|> cast(attrs, [:fname, :lname, :phone, :email, :password, :address, :city, :country, :zip_code])
+		|> cast(attrs, [:fname, :lname, :phone, :email, :encrypted_password, :address, :city, :country, :zip_code])
 		|> validate_required([:fname, :lname, :email])
-		|> update_change(:password, &Pbkdf2.hashpwsalt/1)
-	    
+		|> update_change(:encrypted_password, &Pbkdf2.hashpwsalt/1)
+
 
 	end
 
