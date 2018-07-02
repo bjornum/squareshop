@@ -21,8 +21,7 @@ config :squareshop, SquareshopWeb.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
-# Add Stripety stripe api module
-  config :stripity_stripe, api_key: "secret"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
