@@ -65,7 +65,7 @@
 				<div class="sq-text-center">
 					<button onclick="window.location.href='/homepage'" type="submit" class="sq-button-default">Register</button>
 				</div>
-			<%= end %>
+			<% end %>
 		</div>
 	</div>
 </div>
