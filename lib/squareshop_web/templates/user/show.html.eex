@@ -11,7 +11,7 @@
 
   <li>
     <strong>Fname:</strong>
-    <%= @user.fname %>
+    <%= @current_user_id.fname %>
   </li>
   <li>
     <strong>Lname:</strong>

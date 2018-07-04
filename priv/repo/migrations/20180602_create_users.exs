@@ -15,6 +15,8 @@ defmodule Compare.Repo.Migrations.CreateUsers do
 			add :shopping_cart, {:array, :map}, default: []
 			timestamps()
 		end
+
+		create unique_index(:users, [:email])
 	end
 
 end

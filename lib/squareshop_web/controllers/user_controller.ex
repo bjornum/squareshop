@@ -8,6 +8,11 @@ defmodule SquareshopWeb.UserController do
   def index(conn, _params) do
     users = Identity.list_users()
     render(conn, "index.html", users: users)
+    # cond do
+    #   user_id = Plug.Conn.get_session(conn, :current_user_id)
+    #   if
+    #   |> redirect(to: user_path(conn, :show, user_id)) 
+    # end
   end
 
   def new(conn, _params) do
@@ -32,6 +37,22 @@ defmodule SquareshopWeb.UserController do
 		user = Identity.get_user!(id)
 	    render conn, "show.html", users: users, user: user
 	end
+
+  # def show(conn, %{"id" => id}) do
+  #      user = Repo.get(User, id)
+  #      changeset = User.changeset(user)
+  #      cond do
+  #       user_id = Plug.Conn.get_session(conn, :current_user_id) ->
+  #        conn
+  #        |> render("show.html", user: user, changeset: changeset)
+  #        :error ->
+  #         conn
+  #         |> put_flash(:info, "No Access")
+  #         |> redirect(to: page_path(conn, :index))
+  #       end        
+  # end
+   
+  
 
   def edit(conn, %{"id" => id}) do
     user = Identity.get_user!(id)

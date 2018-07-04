@@ -23,6 +23,7 @@ defmodule Squareshop.Identity.User do
 		user
 		|> cast(attrs, [:fname, :lname, :phone, :email, :encrypted_password, :address, :city, :country, :zip_code])
 		|> validate_required([:fname, :lname, :email])
+	    |> unique_constraint(:email)
 		|> update_change(:encrypted_password, &Pbkdf2.hashpwsalt/1)
 
 

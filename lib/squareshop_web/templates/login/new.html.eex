@@ -1,10 +1,4 @@
-<div class="sq-modal" id="myModal" >
-    <div class="sq-modal-body" style="width:24rem;">
-		<header>
-            <div class="sq-close-button" onclick="toggleModal('myModal')">&times;</div>
-        </header>
-        <div class="sq-modal-content">
-				<section>
+
                 <%= form_for @conn, login_path(@conn, :create), [as: :login], fn f -> %>
 					<form class="sq-form" action="index.html" method="post">
         				<fieldset>
@@ -23,22 +17,10 @@
 										</a>
 									</div>
 								</a>
-								<a href="/reguser">
-									<div class="sq-justify-right">
-										<button type="button" name="">New user</button>
+								<button class="sq-nav-btn2"><%= link "Register", to: user_path(@conn, :new) %></button>
 									</div>
 								</a>
           					</div>
         				</fieldset>
 					</form>
-                </section>
-        </div>
-    </div>
-</div>
-  <script type="text/javascript">
-  window.toggleModal = (id)=> {
-  var modal = document.getElementById(id);
-  modal.classList.toggle('sq-modal-show');
-};
-  </script>
-<!-- </div> -->
+            

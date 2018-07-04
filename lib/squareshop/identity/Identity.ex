@@ -17,10 +17,13 @@ defmodule Squareshop.Identity do
 		|> Repo.insert()
 	end
 
-	# def add_address(addressdata \\ %{}, id) do
-	# 	Address.changeset(User, id, addressdata)
-	# 	|> Repo.insert()
-	#end
+	def get_by_email(email) when is_nil(email) do
+		nil
+	end
+	def get_by_email(email) do
+		Repo.get_by(User, email: email)
+	end
+
 #Get all the CreateUsers
 	def list_users do
 		Repo.all(User)

@@ -5,3 +5,9 @@ defmodule SquareshopWeb.Helpers.Auth do
         if user_id, do: !!Squareshop.Repo.get(Squareshop.Identity.User, user_id)
     end
 end
+
+    # def signed_in?(conn) do
+
+        
+    # end
+end

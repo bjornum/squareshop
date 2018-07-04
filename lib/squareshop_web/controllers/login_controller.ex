@@ -1,6 +1,6 @@
 defmodule SquareshopWeb.LoginController do
   use SquareshopWeb, :controller
-  alias Squarestore.Identity
+  alias Squareshop.Identity
 
   def new(conn, params) do
     render(conn, "new.html")
